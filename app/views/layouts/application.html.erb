@@ -11,50 +11,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="navbar-wagon">
-      <a href="/" class="navbar-CTG-brand">
-        <%= image_tag ("Logo_CTG.png"), class: "navbar-CTG-brand" %>
-      </a>
-      <!-- <input type="text" name="search" placeholder="Search.." class:"navbar-CTG-search"> -->
-
-      <div class="navbar_container ">
-        <form class="form" method="POST">
-          <!-- <div class="row"> <div class="col-md-8 col-ld-6"> -->
-          <input class="form" name="name" type="text" placeholder="Search"/>
-          <button class="navbar-button " aria-hidden="true">
-            <i class="fa fa-search"></i>
-          </button>
-          <!-- </div> </div> -->
-        </form>
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <a href="#">Profile</a>
-              </li>
-              <li>
-                <a href="#">Dashboard</a>
-              </li>
-              <li>
-                <a href="#">Log Out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    </div>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flash' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-
   </body>
 </html>
 
