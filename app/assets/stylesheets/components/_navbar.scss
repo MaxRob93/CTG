@@ -10,9 +10,34 @@
   justify-content: space-between;
 }
 
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+}
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-CTG-brand img{
+  height: 80px;
+  opacity: 0.7;
+}
+
+.navbar-CTG-brand img:hover {
+  opacity: 1;
+}
+
+.navbar-button {
+  border: none;
+  color: #008361;
+  opacity: 0.7;
+}
+
+.navbar-button:hover {
+  opacity: 1;
+}
+
+
+
+.navbar-CTG-search {
+  font-size: 18px;
 }
 
 /* User Avatar */
