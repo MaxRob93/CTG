@@ -1,0 +1,9 @@
+<%= form_for(@meal_provider) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
