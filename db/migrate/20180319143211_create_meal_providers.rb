@@ -4,7 +4,6 @@ class CreateMealProviders < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :address
       t.string :category
-      t.references :user, foreign_key: true
 
       t.timestamps
     end
