@@ -15,7 +15,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     @meal.meal_provider = MealProvider.find(params[:meal_provider_id])
     if @meal.save!
-      redirect_to meal_provider_meals_path(@meal.meal_provider, @meal)
+      redirect_to meal_provider_meal_path(@meal.meal_provider, @meal)
     else
       render :new
     end
