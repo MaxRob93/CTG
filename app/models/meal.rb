@@ -5,4 +5,5 @@ class Meal < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
 end
