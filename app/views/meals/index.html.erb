@@ -1,9 +1,9 @@
-<h1>Meal#index</h1>
+
+<h1>Choose a Meal</h1>
 <div class="row">
   <% @meals.each do |meal| %>
     <div class="col-xs-6 col-sm-4 col-md-3">
       <div class="card" style="background-image: url(<%= cloudinary_tag(meal.photo) %>)";>
-      <%= link_to meal.name, meal_path(meal) %>
       <div class="card-category"><%= meal.meal_provider.category %></div>
       <div class="card-description">
         <h2> <%= meal.name %> </h2>
@@ -13,3 +13,4 @@
     </div>
   <% end %>
 </div>
+

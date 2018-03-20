@@ -1,12 +1,13 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @meals = Meal.all
   end
 
   def new
+    @meal_provider = MealProvider.find(params[:meal_provider_id])
     @meal = Meal.new
   end
 
@@ -14,7 +15,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     @meal.meal_provider = MealProvider.find(params[:meal_provider_id])
     if @meal.save!
-      redirect_to meal_path(@meal)
+      redirect_to meal_provider_meals_path(@meal.meal_provider)
     else
       render :new
     end
@@ -28,7 +29,7 @@ class MealsController < ApplicationController
 
   def update
     @meal.update(meal_params)
-    redirect_to meal_path(@meal)
+    redirect_to meal_provider_meal(@meal)
   end
 
   def destroy

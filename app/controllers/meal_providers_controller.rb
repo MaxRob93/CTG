@@ -1,5 +1,5 @@
 class MealProvidersController < ApplicationController
-  before_action :set_meal_providers, only: [:show, :edit, :update, :destroy]
+  before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
   def index
     @meal_providers = MealProvider.all
@@ -11,8 +11,9 @@ class MealProvidersController < ApplicationController
 
   def create
     @meal_provider = MealProvider.new(meal_provider_params)
+    @meal_provider.user = current_user
     if @meal_provider.save!
-      redirect_to meal_provider_path(@meal_provider)
+      redirect_to meal_provider_meals(@meal_provider)
     else
       render :new
     end

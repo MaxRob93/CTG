@@ -1,4 +1,10 @@
-<h1>MealProviders#show</h1>
-<%= link_to "Delete", meal_provider_path(meal_provider),
+<h1><%=  @meal_provider.name%>  </h1>
+<h3> <%= @meal_provider.address %> </h3>
+<h3> <%= @meal_provider.category %> </h3>
+<%= link_to "Delete", meal_provider_path(@meal_provider),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+<br>
+<%= link_to "+ Add a meal", new_meal_provider_meal_path(@meal_provider) %>
+<br>
+<%= link_to "Go back to restaurant", meal_providers_path %>
