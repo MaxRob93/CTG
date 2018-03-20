@@ -13,7 +13,7 @@ class MealProvidersController < ApplicationController
     @meal_provider = MealProvider.new(meal_provider_params)
     @meal_provider.user = current_user
     if @meal_provider.save!
-      redirect_to meal_provider_meals(@meal_provider)
+      redirect_to meal_provider_path(@meal_provider)
     else
       render :new
     end
