@@ -42,7 +42,7 @@ class MealProvidersController < ApplicationController
   end
 
   def meal_provider_params
-    params.require(:meal_provider).permit(:name,:address,:category)
+    params.require(:meal_provider).permit(:name,:address,:category, :user_id)
   end
 end
 
