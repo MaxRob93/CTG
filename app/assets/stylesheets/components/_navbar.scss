@@ -1,14 +1,34 @@
 /* Main navbar */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-color: transparent;
+  // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   transition: all 0.3s ease;
-  height: 50px;
+  height: 40px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: 0.5s background-color ease;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+
+  .form {
+    border-radius: 8px;
+    border: 1px;
+    height: 32px;
+    background-color: rgba(235,235,235,1);
+    input::placeholder { /* Chrome/Opera/Safari */
+  color: #008361;
+  font-weight: lighter;
+  padding-left: 5px;
+}
+  }
+}
+
+.navbar-wagon-white {
+  background-color: white;
+
 }
 
 .navbar_container {
@@ -18,7 +38,7 @@
 /* Logo */
 .navbar-CTG-brand img{
   height: 50px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .navbar-CTG-brand img:hover {
@@ -28,14 +48,13 @@
 .navbar-button {
   border: none;
   color: #008361;
-  opacity: 0.7;
+  opacity: 0.9;
+  background-color: transparent;
 }
 
 .navbar-button:hover {
   opacity: 1;
 }
-
-
 
 .navbar-CTG-search {
   font-size: 18px;

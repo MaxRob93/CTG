@@ -1,0 +1,38 @@
+.btn-medium {
+  color: #008361;
+  background-color: rgba(235,235,235,1);
+  border: 1px solid #008361;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: lighter;
+  a {
+    color: #008361; }
+
+}
+.btn-medium:hover {
+  opacity: 1;
+
+  color: #008361;
+  a {
+    color: #008361;
+  text-decoration: none;}
+
+}
+.btn-treehouse {
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-weight: lighter;
+  background: #008361;
+  transition: background 0.3s ease;
+a {
+  color: white; }
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #008361;
+  text-decoration: none;
+  color: white;
+}
+
+/* Build your own button classes ! */
