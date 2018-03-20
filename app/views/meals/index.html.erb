@@ -1,6 +1,16 @@
-<h1>Choose a dish</h1>
-<% @meals.each do |meal| %>
-  <h3><%=meal.name %></h3>
-  <p><%= meal.description %></p>
-  <p><%= meal.price %></p>
-<% end %>
+
+<h1>Choose a Meal</h1>
+<div class="row">
+  <% @meals.each do |meal| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="card" style="background-image: url(<%= cloudinary_tag(meal.photo) %>)";>
+      <div class="card-category"><%= meal.meal_provider.category %></div>
+      <div class="card-description">
+        <h2> <%= meal.name %> </h2>
+        <p><%= meal.description %> </p>
+      </div>
+      <div class="card-price"> <%= meal.price %> </div>
+    </div>
+  <% end %>
+</div>
+
