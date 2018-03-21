@@ -19,16 +19,16 @@ class MealProviderPolicy < ApplicationPolicy
     # only owner can modify
     # record => the mp you want to update
     # user => current_user
-    user_is_owner?
+    user_is_owner_or_admin?
   end
 
   def destroy?
-    user_is_owner?
+    user_is_owner_or_admin?
   end
 
   private
 
-  def user_is_owner?
-    record.user == user #returns a boolean
+  def user_is_owner_or_admin?
+    user.admin || record.user == user #returns a boolean
   end
 end
