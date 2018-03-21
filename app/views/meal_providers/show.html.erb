@@ -8,6 +8,9 @@
     </div>
     <div class="bannerUnderMeal">
       <p class="bannerMeal-description"><%= @meal_provider.address %></p>
+      <div>
+     <%= link_to "See menu", meal_provider_meals_path(@meal_provider), class:"btn btn-warning btn-lg" %>
+      </div>
     </div>
   </div>
 </div>
