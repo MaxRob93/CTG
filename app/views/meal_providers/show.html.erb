@@ -1,6 +1,12 @@
 <h1><%=  @meal_provider.name%>  </h1>
 <h3> <%= @meal_provider.address %> </h3>
 <h3> <%= @meal_provider.category %> </h3>
+
+<%= link_to meal_provider_meals_path(@meal_provider) do %>
+  <i class="fas fa-utensils"></i> Menu
+<% end %>
+
+<br>
 <%= link_to "Delete", meal_provider_path(@meal_provider),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
