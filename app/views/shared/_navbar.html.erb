@@ -15,28 +15,6 @@
         </button>
           <!-- </div> </div> -->
       </form>
-<<<<<<< HEAD
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings")%>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, :method => :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-=======
       <% if user_signed_in? %>
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -64,21 +42,10 @@
           <!-- Login link (when logged out) -->
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <% end %>
->>>>>>> cf9f03087f15f9d6fa05afb19a424538c8f58740
-        </div>
-        <!-- </div> -->
-      </div>
-    </div>
-<<<<<<< HEAD
-  <!-- </div> -->
-</div>
-</div>
 
-<script type="text/javascript">
-=======
+    </div>
 
     <script type="text/javascript">
->>>>>>> cf9f03087f15f9d6fa05afb19a424538c8f58740
 
       function initUpdateNavbarOnScroll() {
         const navbar = document.querySelector('.navbar-wagon');

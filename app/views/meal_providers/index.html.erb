@@ -1,22 +1,5 @@
-<<<<<<< HEAD
-<div class="meal_provider_container">
 
 
-<h1>Pick a restaurant</h1>
-<% @meal_providers.each do |mp| %>
-  <%= link_to mp.name, meal_provider_path(mp) %>
-  <p><%= mp.address %></p>
-  <p><%= mp.category %></p>
-<% end %>
-</div>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
-=======
   <div class="container">
     <h1>Choose a Restaurant</h1>
     <div class="row">
@@ -40,4 +23,9 @@
     Create a Restaurant
     <% end %>
   </div>
->>>>>>> cf9f03087f15f9d6fa05afb19a424538c8f58740
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
