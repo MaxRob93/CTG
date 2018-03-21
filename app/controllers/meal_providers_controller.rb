@@ -3,16 +3,19 @@ class MealProvidersController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
-    @meal_providers = MealProvider.all
+    # @meal_providers = MealProvider.all
+    @meal_providers = policy_scope(MealProvider)
   end
 
   def new
     @meal_provider = MealProvider.new
+    authorize @meal_provider
   end
 
   def create
     @meal_provider = MealProvider.new(meal_provider_params)
     @meal_provider.user = current_user
+    authorize @meal_provider
     if @meal_provider.save!
       redirect_to meal_provider_path(@meal_provider)
     else
@@ -40,6 +43,7 @@ class MealProvidersController < ApplicationController
 
   def set_meal
     @meal_provider = MealProvider.find(params[:id])
+    authorize @meal_provider
   end
 
   def meal_provider_params
