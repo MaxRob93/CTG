@@ -1,5 +1,6 @@
 class MealProvidersController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
     @meal_providers = MealProvider.all
