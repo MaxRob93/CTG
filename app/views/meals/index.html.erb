@@ -1,11 +1,9 @@
-
-
 <div class="container">
   <h1>Choose a Meal</h1>
   <div class="row">
     <% @meals.each do |meal| %>
     <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-lg-4">
 
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path meal.photo%>')";>
         <div class="card-category">
