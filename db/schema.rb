@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180321102931) do
+=======
+ActiveRecord::Schema.define(version: 20180321142406) do
+>>>>>>> cf9f03087f15f9d6fa05afb19a424538c8f58740
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +35,12 @@ ActiveRecord::Schema.define(version: 20180321102931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+<<<<<<< HEAD
     t.float "latitude"
     t.float "longitude"
+=======
+    t.string "photo"
+>>>>>>> cf9f03087f15f9d6fa05afb19a424538c8f58740
     t.index ["user_id"], name: "index_meal_providers_on_user_id"
   end
 

@@ -8,7 +8,12 @@
     </div>
     <div class="bannerUnderMeal">
       <p class="bannerMeal-description"><%= @meal.description %> <br> <%= @meal.price %> € </p>
-      <div><a class="btn btn-warning btn-lg">Order now</a></div>
+      <div>
+        <%= link_to '#', class: 'btn btn-warning' do %>
+        <i class="fas fa-cart-arrow-down"></i>
+        Add to cart
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

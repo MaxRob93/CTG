@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :meal_providers do
     resources :meals
   end
-  # resources :orders
+  devise_for :users
+
 end
 
 
@@ -44,4 +44,3 @@ end
 #                          PATCH  /meal_providers/:id(.:format)                              meal_providers#update
 #                          PUT    /meal_providers/:id(.:format)                              meal_providers#update
 #                          DELETE /meal_providers/:id(.:format)                              meal_providers#destroy
-

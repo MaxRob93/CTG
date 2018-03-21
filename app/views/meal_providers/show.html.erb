@@ -1,16 +1,16 @@
-<h1><%=  @meal_provider.name%>  </h1>
-<h3> <%= @meal_provider.address %> </h3>
-<h3> <%= @meal_provider.category %> </h3>
-
-<%= link_to meal_provider_meals_path(@meal_provider) do %>
-  <i class="fas fa-utensils"></i> Menu
-<% end %>
-
-<br>
-<%= link_to "Delete", meal_provider_path(@meal_provider),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<br>
-<%= link_to "+ Add a meal", new_meal_provider_meal_path(@meal_provider) %>
-<br>
-<%= link_to "Go back to restaurant", meal_providers_path %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="bannerMeal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @meal_provider.photo %>')";>
+        <p class="bannerMeal-category"><%= @meal_provider.category %></p>
+      <div>
+        <h2> <%= @meal_provider.name %> </h2>
+      </div>
+    </div>
+    <div class="bannerUnderMeal">
+      <p class="bannerMeal-description"><%= @meal_provider.address %></p>
+      <div>
+     <%= link_to "See menu", meal_provider_meals_path(@meal_provider), class:"btn btn-warning btn-lg" %>
+      </div>
+    </div>
+  </div>
+</div>

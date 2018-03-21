@@ -1,5 +1,6 @@
 class MealProvidersController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
     # @meal_providers = MealProvider.all
@@ -50,6 +51,6 @@ class MealProvidersController < ApplicationController
   end
 
   def meal_provider_params
-    params.require(:meal_provider).permit(:name,:address,:category)
+    params.require(:meal_provider).permit(:name,:address,:category,:photo)
   end
 end
