@@ -1,25 +1,24 @@
-
-<h1>Choose a Meal</h1>
-<div class="row">
-  <% @meals.each do |meal| %>
-  <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
-  <div class="col-xs-6 col-xs-offset-1 col-sm-4 col-md-3">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path meal.photo%>')";>
-      <div class="card-category">
-        <%= meal.meal_provider.category %>
-      </div>
-      <div class="card-description">
-        <h2> <%= meal.name %> </h2>
-        <p><%= meal.description %> </p>
-      </div>
-      <div class="card-price">
-        <%= meal.price %>€
+  <h1>Choose a Meal</h1>
+  <div class="row">
+    <% @meals.each do |meal| %>
+    <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
+    <div class="col-xs-6 col-xs-offset-1 col-sm-4 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path meal.photo%>')";>
+        <div class="card-category">
+          <%= meal.meal_provider.category %>
+        </div>
+        <div class="card-description">
+          <h2> <%= meal.name %> </h2>
+          <p><%= meal.description %> </p>
+        </div>
+        <div class="card-price">
+          <%= meal.price %>€
+        </div>
       </div>
     </div>
+    <% end %>
+    <% end %>
   </div>
-  <% end %>
-  <% end %>
-</div>
 
 
   <%= link_to "Go back to restaurant", meal_providers_path %>
