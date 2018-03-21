@@ -1,19 +1,23 @@
-  <h1>Choose a Restaurant</h1>
-  <div class="row">
-    <% @meal_providers.each do |mp| %>
-    <%= link_to meal_provider_path(mp) do %>
-    <div class="col-xs-6 col-sm-4 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mp.photo %>')";>
-        <div class="card-category">
-          <%= mp.category %>
-        </div>
-        <div class="card-description">
-          <h2> <%= mp.name %> </h2>
-          <p><%= mp.address %> </p>
+  <div class="container">
+    <h1>Choose a Restaurant</h1>
+    <div class="row">
+      <% @meal_providers.each do |mp| %>
+      <%= link_to meal_provider_path(mp) do %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mp.photo %>')";>
+          <div class="card-category">
+            <%= mp.category %>
+          </div>
+          <div class="card-description">
+            <h2> <%= mp.name %> </h2>
+            <p><%= mp.address %> </p>
+          </div>
         </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
-    <% end %>
+    <%= link_to new_meal_provider_path, class:"btn btn-primary" do %>
+    Create a Restaurant
     <% end %>
   </div>
-
