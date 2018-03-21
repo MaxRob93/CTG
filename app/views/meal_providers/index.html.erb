@@ -1,7 +1,10 @@
+<div class="meal_provider_container">
+
+
 <h1>Pick a restaurant</h1>
 <% @meal_providers.each do |mp| %>
   <%= link_to mp.name, meal_provider_path(mp) %>
   <p><%= mp.address %></p>
   <p><%= mp.category %></p>
 <% end %>
-
+</div>
