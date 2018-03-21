@@ -3,7 +3,7 @@
     <div class="row">
       <% @meal_providers.each do |mp| %>
       <%= link_to meal_provider_path(mp) do %>
-      <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="col-xs-6 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mp.photo %>')";>
           <div class="card-category">
             <%= mp.category %>

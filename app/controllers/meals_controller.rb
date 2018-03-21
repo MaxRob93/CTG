@@ -3,7 +3,8 @@ class MealsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @meals = Meal.all
+    @meal_provider = MealProvider.find(params[:meal_provider_id])
+    @meals = @meal_provider.meals
   end
 
   def new
