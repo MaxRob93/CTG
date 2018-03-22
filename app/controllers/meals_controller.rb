@@ -5,6 +5,7 @@ class MealsController < ApplicationController
   def index
     @meal_provider = MealProvider.find(params[:meal_provider_id])
     @meals = @meal_provider.meals
+    @meal = Meal.new
   end
 
   def new

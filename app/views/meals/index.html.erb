@@ -1,7 +1,10 @@
 <div class="container">
   <h1>Choose a Meal</h1>
-  <%= link_to new_meal_provider_meal_path, class:'btn btn-primary' do %> Add a meal
-    <% end %>
+  <!-- <%= link_to new_meal_provider_meal_path, class:'btn btn-primary' do %> Add a meal
+  <% end %>  -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add a Meal
+  </button>
   <div class="row">
     <% @meals.each do |meal| %>
     <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
@@ -26,3 +29,17 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a Meal</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', meal: @meal %>
+      </div>
+    </div>
+  </div>
+</div>
