@@ -42,6 +42,7 @@ class MealProvidersController < ApplicationController
   end
 
   def show
+    @new_meal = Meal.new
   end
 
   def edit
