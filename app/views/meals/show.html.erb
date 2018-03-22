@@ -1,7 +1,10 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="bannerMeal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @meal.photo%>')">
-        <p class="bannerMeal-description"><%= @meal.description %> <br> <%= @meal.price %> € </p>
+        <p class="bannerMeal-description">
+          <%= @meal.description %>
+          <br>
+          <%= humanized_money_with_symbol(@meal.price) %></p>
       <div>
         <h2> <%= @meal.name %> </h2>
       </div>
