@@ -1,8 +1,30 @@
 class MealProvidersController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
-    @meal_providers = MealProvider.all
+    if params[:query].nil?
+     @meal_providers = MealProvider.where.not(latitude: nil, longitude: nil)
+     @meal_provider = MealProvider.new
+     @markers = @meal_providers.map do |meal_provider|
+     {
+       lat: meal_provider.latitude,
+       lng: meal_provider.longitude#,
+       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+     }
+   end
+   else
+    @meal_providers = MealProvider.search_req(params[:query])
+    @meal_provider = MealProvider.new
+
+     @markers = @meal_providers.map do |meal_provider|
+     {
+       lat: meal_provider.latitude,
+       lng: meal_provider.longitude#,
+       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+     }
+    end
+   end
   end
 
   def new
@@ -42,7 +64,6 @@ class MealProvidersController < ApplicationController
   end
 
   def meal_provider_params
-    params.require(:meal_provider).permit(:name,:address,:category)
+    params.require(:meal_provider).permit(:name,:address,:category,:photo)
   end
 end
-

@@ -1,24 +1,49 @@
-  <div class="container">
-    <h1>Choose a Restaurant</h1>
-    <div class="row">
-      <% @meal_providers.each do |mp| %>
-      <%= link_to meal_provider_path(mp) do %>
-      <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
-          <%=  %>
-          <div class="card-category">
-            <%= mp.category %>
-          </div>
-          <div class="card-description">
-            <h2> <%= mp.name %> </h2>
-            <p><%= mp.address %> </p>
-          </div>
+
+
+<div class="container">
+  <h1>Choose a Restaurant</h1>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add a Restaurant
+  </button>
+  <div class="row">
+    <% @meal_providers.each do |mp| %>
+    <%= link_to meal_provider_path(mp) do %>
+    <div class="col-xs-6 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mp.photo %>')";>
+        <div class="card-category">
+          <%= mp.category %>
+        </div>
+        <div class="card-description">
+          <h2> <%= mp.name %> </h2>
+          <p><%= mp.address %> </p>
         </div>
       </div>
-      <% end %>
-      <% end %>
     </div>
-    <%= link_to new_meal_provider_path, class:"btn btn-primary" do %>
-    Create a Restaurant
+    <% end %>
     <% end %>
   </div>
+</div>
+<br>
+<div
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mealprovider="<%= @meal_providers.to_json %>"
+></div>
+
+<!-- modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a Restaurant</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', meal_provider: @meal_provider %>
+      </div>
+    </div>
+  </div>
+</div>

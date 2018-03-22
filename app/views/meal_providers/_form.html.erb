@@ -2,5 +2,7 @@
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :category %>
-  <%= f.submit class: 'btn btn-primary form-control' %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, 'Create a Restaurant', class: 'btn btn-primary form-control' %>
 <% end %>
