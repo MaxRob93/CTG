@@ -1,2 +1,22 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="bannerMeal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
+      <div class="container">
+        <p><%= @order.email %></p>
+      </div>
+      <div class="container">
+       <ul>
+        <% sum = 0 %>
+         <% @order.meal_orders.each do |mo|%>
+         <li>
+          <%= mo.meal.name %>
+          <%= mo.meal.price %> €
+        </li>
+        <% sum += mo.meal.price %>
+        <% end %>
+        Total: <%= sum %> €
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
