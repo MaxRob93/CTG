@@ -3,8 +3,8 @@ class MealProvidersController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
-    # @meal_providers = MealProvider.all
     @meal_providers = MealProvider.where.not(latitude: nil, longitude: nil)
+    @meal_provider = MealProvider.new
     @markers = @meal_providers.map do |meal_provider|
      {
        lat: meal_provider.latitude,
