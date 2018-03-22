@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <% if policy(@meal_provider).destroy? %>
+        <% if current_user && policy(@meal_provider).destroy? %>
           <%= link_to meal_provider_path(@meal_provider), class:"btn btn-warning",method: :delete,data: { confirm: "Are you sure?" } do %> <i class="far fa-trash-alt"></i> Delete
           <% end %>
         <% end %>
