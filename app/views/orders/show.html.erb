@@ -10,11 +10,12 @@
          <% @order.meal_orders.each do |mo|%>
          <li>
           <%= mo.meal.name %>
-          <%= mo.meal.price %> €
+          <%= humanized_money_with_symbol(mo.meal.price) %>
         </li>
         <% sum += mo.meal.price %>
         <% end %>
-        Total: <%= sum %> €
+        <li>Total: <%= humanized_money_with_symbol(@order.amount) %></li>
+        <li><%= @order.state %></li>
       </ul>
     </div>
   </div>

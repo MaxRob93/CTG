@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
   def create_meal_order
     order = Order.where(user: current_user)
     if order.empty?
-      @order = Order.new(user: current_user, email: current_user.email)
+      @order = Order.new(user: current_user, email: current_user.email, state: 'Pending')
     else
       @order = order.first
     end
