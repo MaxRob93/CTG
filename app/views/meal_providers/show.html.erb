@@ -2,15 +2,35 @@
   <div class="col-xs-12">
     <div class="bannerMeal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @meal_provider.photo %>')";>
         <p class="bannerMeal-category"><%= @meal_provider.category %></p>
+        <p class="bannerMeal-description"><%= @meal_provider.address %> </p>
       <div>
         <h2> <%= @meal_provider.name %> </h2>
       </div>
     </div>
-    <div class="bannerUnderMeal">
-      <p class="bannerMeal-description"><%= @meal_provider.address %></p>
-      <div>
-     <%= link_to "See menu", meal_provider_meals_path(@meal_provider), class:"btn btn-warning btn-lg" %>
-      </div>
-    </div>
   </div>
 </div>
+<div class="container">
+  <h1>Choose a Meal</h1>
+  <div class="row">
+    <% @meal_provider.meals.each do |meal| %>
+    <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
+    <div class="col-xs-6  col-lg-3">
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path meal.photo%>')";>
+        <div class="card-category">
+          <%= meal.meal_provider.category %>
+        </div>
+        <div class="card-description">
+          <h2> <%= meal.name %> </h2>
+          <p><%= meal.description %> </p>
+        </div>
+        <div class="card-price">
+          <%= meal.price %>€
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
