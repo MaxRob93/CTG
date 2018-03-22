@@ -1,5 +1,7 @@
 <div class="container">
   <h1>Choose a Meal</h1>
+  <%= link_to new_meal_provider_meal_path, class:'btn btn-primary' do %> Add a meal
+    <% end %>
   <div class="row">
     <% @meals.each do |meal| %>
     <%= link_to meal_provider_meal_path(meal.meal_provider, meal) do %>
