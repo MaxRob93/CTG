@@ -35,19 +35,19 @@
 .bannerMeal-description {
   font-size: 25px;
   font-weight: lighter;
-  color: white;
-  margin-bottom: 30px;
-  text-align: center;
-  background-color: #008361;
-  padding: 5px 10px;
-}
-.bannerMeal-category {
-  font-size: 25px;
-  font-weight: lighter;
   color: black;
   opacity: 0.6;
   position: absolute;
   bottom: -18px;
+  left: 37px;
+}
+.bannerMeal-category {
+  font-size: 25px;
+  font-weight: normal;
+  color: black;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 18px;
   left: 37px;
 }
 .btn {
