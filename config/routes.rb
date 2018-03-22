@@ -11,24 +11,16 @@ Rails.application.routes.draw do
 
 end
 
-
-#                  Prefix Verb   URI Pattern                                                Controller#Action
-#         new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
-#             user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)                                  devise/sessions#destroy
-#        new_user_password GET    /users/password/new(.:format)                              devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)                             devise/passwords#edit
-#            user_password PATCH  /users/password(.:format)                                  devise/passwords#update
-#                          PUT    /users/password(.:format)                                  devise/passwords#update
-#                          POST   /users/password(.:format)                                  devise/passwords#create
-# cancel_user_registration GET    /users/cancel(.:format)                                    devise/registrations#cancel
-#    new_user_registration GET    /users/sign_up(.:format)                                   devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)                                      devise/registrations#edit
-#        user_registration PATCH  /users(.:format)                                           devise/registrations#update
-#                          PUT    /users(.:format)                                           devise/registrations#update
-#                          DELETE /users(.:format)                                           devise/registrations#destroy
-#                          POST   /users(.:format)                                           devise/registrations#create
-#                     root GET    /                                                          pages#home
+#    root GET    /                                                          pages#home
+#                 add_cart POST   /add_cart(.:format)                                        orders#create_meal_order
+#                   orders GET    /orders(.:format)                                          orders#index
+#                          POST   /orders(.:format)                                          orders#create
+#                new_order GET    /orders/new(.:format)                                      orders#new
+#               edit_order GET    /orders/:id/edit(.:format)                                 orders#edit
+#                    order GET    /orders/:id(.:format)                                      orders#show
+#                          PATCH  /orders/:id(.:format)                                      orders#update
+#                          PUT    /orders/:id(.:format)                                      orders#update
+#                          DELETE /orders/:id(.:format)                                      orders#destroy
 #      meal_provider_meals GET    /meal_providers/:meal_provider_id/meals(.:format)          meals#index
 #                          POST   /meal_providers/:meal_provider_id/meals(.:format)          meals#create
 #   new_meal_provider_meal GET    /meal_providers/:meal_provider_id/meals/new(.:format)      meals#new
@@ -45,3 +37,18 @@ end
 #                          PATCH  /meal_providers/:id(.:format)                              meal_providers#update
 #                          PUT    /meal_providers/:id(.:format)                              meal_providers#update
 #                          DELETE /meal_providers/:id(.:format)                              meal_providers#destroy
+#         new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)                                  devise/sessions#destroy
+#        new_user_password GET    /users/password/new(.:format)                              devise/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format)                             devise/passwords#edit
+#            user_password PATCH  /users/password(.:format)                                  devise/passwords#update
+#                          PUT    /users/password(.:format)                                  devise/passwords#update
+#                          POST   /users/password(.:format)                                  devise/passwords#create
+# cancel_user_registration GET    /users/cancel(.:format)                                    devise/registrations#cancel
+#    new_user_registration GET    /users/sign_up(.:format)                                   devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)                                      devise/registrations#edit
+#        user_registration PATCH  /users(.:format)                                           devise/registrations#update
+#                          PUT    /users(.:format)                                           devise/registrations#update
+#                          DELETE /users(.:format)                                           devise/registrations#destroy
+#                          POST   /users(.:format)                                           devise/registrations#create
