@@ -3,7 +3,15 @@ class MealProvidersController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :destroy]
 
   def index
-    @meal_providers = MealProvider.all
+    # @meal_providers = MealProvider.all
+    @meal_providers = MealProvider.where.not(latitude: nil, longitude: nil)
+    @markers = @meal_providers.map do |meal_provider|
+     {
+       lat: meal_provider.latitude,
+       lng: meal_provider.longitude#,
+       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+     }
+   end
   end
 
   def new
@@ -46,4 +54,3 @@ class MealProvidersController < ApplicationController
     params.require(:meal_provider).permit(:name,:address,:category,:photo)
   end
 end
-
