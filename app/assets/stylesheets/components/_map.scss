@@ -1,12 +1,61 @@
 #content {
   height: 100px;
   width: 100px;
-  h3 {
-    padding: 0px;
-    font-size: 18px;
-  }
+
   p {
     padding: 0px;
     color: #E6EBE0;
   }
+}
+.pac-container {
+    z-index: 9999999999 !important;
+}
+
+
+#iw-container{
+  height: 30px;
+   font-family: 'Open Sans Condensed', sans-serif;
+   display: flex;
+   align-items: center;
+   font-weight: 400;
+   padding: 0px !important;
+   background-color: #008361;
+   color: white;
+   margin: 0px !important;
+   border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+  h3 {
+  margin: 0px !important;
+  padding-left: 4px !important;
+  font-size: 15px !important;
+  }
+}
+
+.gm-style-iw {
+   width: 201px !important;
+   top: 0 !important;
+   left: 0 !important;
+   border-radius: 2px 2px 0 0;
+}
+
+.banner-description {
+  height: 30px;
+  background-color: white;
+  padding-left: 4px;
+  padding-bottom: 2px !important;
+
+  h2 {
+    font-size: 12px;
+    margin-top: 0px !important;
+    margin-bottom: 1px !important;
+  }
+  p {
+    font-size: 10px;
+    font-weight: lighter;
+    margin-bottom: 1px !important;
+  }
+}
+
+.mapimage img {
+
+  height: 90px;
 }
