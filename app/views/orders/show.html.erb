@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="bannerMeal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
       <div class="container">
         <p><%= @order.email %></p>
       </div>
@@ -17,14 +17,21 @@
         <li>Total: <%= humanized_money_with_symbol(@order.total_pretty) %></li>
         <li><%= @order.state %></li>
       </ul>
-      </div>
     </div>
   </div>
+</div>
+</div>
+
+
+<div class="bannerBtnMax">
+  <div id="buttonMax">
   <% if @order.state == 'Pending'%>
+
   <%= link_to new_order_payment_path(@order), class:'btn btn-primary' do %>
   Purchase
   <% end %>
   <% end %>
+</div>
 </div>
 
 <div class="shopping-cart">
@@ -76,7 +83,7 @@
 
     <div class="quantity">
       <i class="minus-btn far fa-minus-square" type="button" name="button"></i>
-      <input type="text" name="name" value="1">
+      <input type="text" name="name" value="0">
       <i class="plus-btn far fa-plus-square" type="button" name="button"></i>
     </div>
 
@@ -102,7 +109,7 @@
 
     <div class="quantity">
       <i class="minus-btn far fa-minus-square" type="button" name="button"></i>
-      <input type="text" name="name" value="1">
+      <input type="text" name="name" value="0">
       <i class="plus-btn far fa-plus-square" type="button" name="button"></i>
     </div>
 
