@@ -7,8 +7,8 @@
       <div class="container">
        <ul>
         <% sum = 0 %>
-         <% @order.meal_orders.each do |mo|%>
-         <li>
+        <% @order.meal_orders.each do |mo|%>
+        <li>
           <%= mo.meal.name %>
           <%= humanized_money_with_symbol(mo.meal.price) %>
         </li>
@@ -17,6 +17,7 @@
         <li>Total: <%= humanized_money_with_symbol(@order.total_pretty) %></li>
         <li><%= @order.state %></li>
       </ul>
+      </div>
     </div>
   </div>
   <% if @order.state == 'Pending'%>
@@ -25,4 +26,87 @@
   <% end %>
   <% end %>
 </div>
+
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    Your order
+  </div>
+
+  <!-- Product #1 -->
+  <div class="orderline">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="heart"></span>
+    </div>
+
+    <div class="image" id="meal_cart">
+      <%= image_tag("cooking.png", width: '100') %>
+    </div>
+
+    <div class="description">
+      <span>Pizza Hawaï</span>
+      <span>Pizza with ananas</span>
+    </div>
+
+    <div class="quantity">
+      <i class="minus-btn far fa-minus-square" type="button" name="button"></i>
+      <input type="text" name="name" value="1">
+      <i class="plus-btn far fa-plus-square" type="button" name="button"></i>
+    </div>
+
+    <div class="total-price">13€</div>
+  </div>
+
+  <!-- Product #2 -->
+  <div class="orderline">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="heart"></span>
+    </div>
+
+    <div class="image" id="meal_cart">
+      <%= image_tag("chicken_donburi.jpg", width: '100') %>
+    </div>
+
+    <div class="description">
+      <span>Chicken Donburi</span>
+      <span>Homemade chicken teriyaki</span>
+    </div>
+
+    <div class="quantity">
+      <i class="minus-btn far fa-minus-square" type="button" name="button"></i>
+      <input type="text" name="name" value="1">
+      <i class="plus-btn far fa-plus-square" type="button" name="button"></i>
+    </div>
+
+    <div class="total-price">12€</div>
+  </div>
+
+
+  <!-- Product #3 -->
+  <div class="orderline">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="heart"></span>
+    </div>
+
+    <div class="image" id="meal_cart">
+      <%= image_tag("fennel.jpg", width: '100') %>
+    </div>
+
+    <div class="description">
+      <span>Fennel pollen falafel</span>
+      <span>Fresh hipster food</span>
+    </div>
+
+    <div class="quantity">
+      <i class="minus-btn far fa-minus-square" type="button" name="button"></i>
+      <input type="text" name="name" value="1">
+      <i class="plus-btn far fa-plus-square" type="button" name="button"></i>
+    </div>
+
+    <div class="total-price">16€</div>
+  </div>
 </div>
+

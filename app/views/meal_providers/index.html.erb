@@ -1,10 +1,6 @@
 
-
-<div class="container">
-  <h1>Choose a Restaurant</h1>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Add a Restaurant
-  </button>
+<div class="banner-provider"><h1>Choose a Restaurant</h1></div>
+<div class="container container-provider">
   <div class="row">
     <% @meal_providers.each do |mp| %>
     <%= link_to meal_provider_path(mp) do %>
@@ -22,11 +18,15 @@
     <% end %>
     <% end %>
   </div>
+  <div class="banner-button"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add a Restaurant
+  </button>
+</div>
 </div>
 <br>
 <div
 id="map"
-style="width: 100%;
+style="width: 95%;
 height: 600px;"
 data-markers="<%= @markers.to_json %>"
 data-mealprovider="<%= @meal_providers.to_json %>"
