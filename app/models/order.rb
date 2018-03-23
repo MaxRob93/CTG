@@ -13,8 +13,4 @@ class Order < ApplicationRecord
   def total_pretty
     total / 100
   end
-
-
-
-
 end
