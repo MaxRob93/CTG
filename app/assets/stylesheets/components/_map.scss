@@ -1,3 +1,8 @@
+#map{
+  margin-left: 20px;
+}
+
+
 #content {
   height: 100px;
   width: 100px;
@@ -53,6 +58,16 @@
     font-weight: lighter;
     margin-bottom: 1px !important;
   }
+}
+
+.gm-style-iw {
+   width: 350px !important;
+   top: 15px !important; // move the infowindow 15px down
+   left: 0 !important;
+   background-color: #fff;
+   box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+   border: 1px solid #008361;
+   border-radius: 2px 2px 0 0;
 }
 
 .mapimage img {

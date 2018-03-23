@@ -10,6 +10,31 @@
   transition: 0.3s;
 }
 
+.card-explication {
+ width: 250px;
+ text-align: center;
+ margin-bottom: 150px;
+ margin-top: 60px;
+ padding-top: 30px;
+ background-color: transparent;
+ border-radius: 5px;
+ color: #008361;
+ border: 2px solid #008361;
+ text-shadow: none;
+ line-height: 1.4;
+ h1 {
+  font-size: 16px;
+  font-weight: bold;
+ }
+ p {
+  font-size: 12px;
+  padding: 15px 12px;
+ }
+ i {
+  font-size: 25px;
+ }
+}
+
 .card-price {
   position: absolute;
   right: 10px;

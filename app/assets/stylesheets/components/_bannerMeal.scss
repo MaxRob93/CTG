@@ -55,3 +55,20 @@
   opacity: 1;
   align-items: center;
 }
+
+.banner-provider{
+  background-color: #008361;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: 22px;
+  }
+}
+
+.banner-button{
+  display: flex;
+  justify-content: space-around;
+}
