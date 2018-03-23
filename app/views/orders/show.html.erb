@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <%= if @order.stat == 'Pending' %>
+  <% if @order.state == 'Pending'%>
   <%= link_to new_order_payment_path(@order), class:'btn btn-primary' do %>
   Purchase
   <% end %>

@@ -9,7 +9,7 @@ class MealProvider < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   include PgSearch
   pg_search_scope :search_req, :against => [:name, :address, :category],    associated_against: {
-      meals: [ :name, :description, :price]
+      meals: [ :name, :description, :price_cents]
     }
 
 end
