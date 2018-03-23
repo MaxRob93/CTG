@@ -1,26 +1,3 @@
-<!-- <div class="row">
-  <div class="col-xs-12">
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
-      <div class="container">
-        <p><%= @order.email %></p>
-      </div>
-      <div class="container">
-       <ul>
-        <% sum = 0 %>
-        <% @order.meal_orders.each do |mo|%>
-        <li>
-          <%= mo.meal.name %>
-          <%= humanized_money_with_symbol(mo.meal.price) %>
-        </li>
-        <% sum += mo.meal.price %>
-        <% end %>
-        <li>Total: <%= humanized_money_with_symbol(@order.total_pretty) %></li>
-        <li><%= @order.state %></li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div> -->
 
 <div class = banner-provider> <h1>Order Attributes</h1>
 </div>
@@ -36,10 +13,11 @@
         <% sum = 0 %>
         <% @order.meal_orders.each do |mo|%>
           <p> <%= mo.meal.name %> :
-          <%= humanized_money_with_symbol(mo.meal.price) %>
+          <%= humanized_money_with_symbol(mo.meal.price) %> </p>
         <% sum += mo.meal.price %>
         <% end %>
-       <br> Total: <%= humanized_money_with_symbol(@order.total_pretty) %> </p>
+       <p>
+        <strong>Total:</strong> <%= humanized_money_with_symbol(@order.total_pretty) %> </p>
 
   </div>
   <div class="card card-design">
