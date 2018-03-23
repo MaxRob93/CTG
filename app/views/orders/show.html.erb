@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12">
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
       <div class="container">
@@ -20,6 +20,34 @@
     </div>
   </div>
 </div>
+</div> -->
+
+<div class = banner-provider> <h1>Order Attributes</h1>
+</div>
+<div class= "banner-order">
+  <div class="card card-design">
+    <i class="fas fa-envelope-square"></i>
+    <h1> Your email </h1>
+    <p> <%= @order.email %></p>
+  </div>
+  <div class="card card-design">
+    <i class="fas fa-shopping-cart"></i>
+    <h1> Total Cart </h1>
+        <% sum = 0 %>
+        <% @order.meal_orders.each do |mo|%>
+          <p> <%= mo.meal.name %> :
+          <%= humanized_money_with_symbol(mo.meal.price) %>
+        <% sum += mo.meal.price %>
+        <% end %>
+       <br> Total: <%= humanized_money_with_symbol(@order.total_pretty) %> </p>
+
+  </div>
+  <div class="card card-design">
+    <i class="fas fa-certificate"></i>
+    <h1> Status </h1>
+    <p> <%= @order.state %></p>
+  </div>
+
 </div>
 
 
