@@ -10,15 +10,19 @@
         <% @order.meal_orders.each do |mo|%>
         <li>
           <%= mo.meal.name %>
-          <%= mo.meal.price %> €
+          <%= humanized_money_with_symbol(mo.meal.price) %>
         </li>
         <% sum += mo.meal.price %>
         <% end %>
-        Total: <%= sum %> €
+        <li>Total: <%= humanized_money_with_symbol(@order.total_pretty) %></li>
+        <li><%= @order.state %></li>
       </ul>
       </div>
     </div>
   </div>
+  <%= link_to new_order_payment_path(@order), class:'btn btn-primary' do %>
+  Purchase
+  <% end %>
 </div>
 
 <div class="shopping-cart">

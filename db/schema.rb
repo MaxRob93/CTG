@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322105014) do
+ActiveRecord::Schema.define(version: 20180322204624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,20 +31,21 @@ ActiveRecord::Schema.define(version: 20180322105014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "photo"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["user_id"], name: "index_meal_providers_on_user_id"
   end
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.float "price"
     t.bigint "meal_provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
     t.index ["meal_provider_id"], name: "index_meals_on_meal_provider_id"
   end
 
@@ -55,6 +56,9 @@ ActiveRecord::Schema.define(version: 20180322105014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "state"
+    t.json "payment"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -71,7 +75,6 @@ ActiveRecord::Schema.define(version: 20180322105014) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
   end
 
   add_foreign_key "meal_orders", "meals"

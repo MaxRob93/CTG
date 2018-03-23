@@ -1,8 +1,12 @@
 <%= simple_form_for(@meal_provider) do |f| %>
   <%= f.input :name %>
-  <%= f.input :address %>
+  <%= f.input :address%>
   <%= f.input :category %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, 'Create a Restaurant', class: 'btn btn-primary form-control' %>
 <% end %>
+
+<%= content_for(:after_js) do %>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBw4jRMxaFOSWkkf2nrTAq6tvX2Y-EXJ24"> </script>
+  <% end %>
