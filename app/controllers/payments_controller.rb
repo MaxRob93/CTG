@@ -8,13 +8,13 @@ class PaymentsController < ApplicationController
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
-      )
+    )
 
     charge = Stripe::Charge.create(
-    customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @order.amount_cents,
-    description:  "Payment for order #{@order.id}",
-    currency:     @order.amount.currency
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @order.total,
+      description:  "Payment for order #{@order.id}",
+      currency:     @order.amount.currency
     )
 
     @order.update(payment: charge.to_json, state: 'paid')
@@ -28,6 +28,9 @@ class PaymentsController < ApplicationController
   private
 
   def set_order
-    @order = Order.where(state: 'pending').find(params[:order_id])
+    @order ||= Order.where(state: 'Pending').find(params[:order_id])
   end
 end
+
+
+

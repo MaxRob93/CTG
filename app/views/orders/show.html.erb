@@ -14,7 +14,7 @@
         </li>
         <% sum += mo.meal.price %>
         <% end %>
-        <li>Total: <%= humanized_money_with_symbol(@order.amount) %></li>
+        <li>Total: <%= humanized_money_with_symbol(@order.total_pretty) %></li>
         <li><%= @order.state %></li>
       </ul>
     </div>
